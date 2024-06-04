@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles//style.css">
+</head>
+
+<body>
+    <nav>
+        <h1>API Testing tool</h1>
+    </nav>
+    <div class="error-overlay">
+        <p class="error">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci molestiae molestias id quis
+            fugiat error pariatur, necessitatibus alias qui perspiciatis?Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Quae commodi obcaecati illum eos nam vero, consectetur magni, eligendi blanditiis eveniet
+            assumenda illo sint iusto itaque quasi doloremque aliquid possimus fugit.</p>
+        <div class="btn"><button id="close-error">Okay</button></div>
+    </div>
+    <main>
+        <div class="history-container">
+            <h2>History</h2>
+            <div id="history-list" class="requests">
+
+            </div>
+        </div>
+        <div class="request-container">
+            <h2>Request</h2>
+            <div class="main">
+                <div class="method">
+                    <h3>Method</h3>
+                    <select id="request-method">
+                        <option style="color: rgb(13, 114, 13);" selected>GET</option>
+                        <option style="color: rgb(0, 30, 128);">POST</option>
+                        <option style="color: rgb(128, 115, 0);">PUT</option>
+                        <option style="color: rgb(128, 98, 0);">PATCH</option>
+                        <option style="color: rgb(128, 0, 0);">DELETE</option>
+                    </select>
+                </div>
+                <div class="input-cont">
+                    <input type="text" id="url" placeholder="http://api/auth/">
+                    <button id="sendBtn">SEND</button>
+                </div>
+                <textarea placeholder="JSON BODY"></textarea>
+
+            </div>
+        </div>
+        <div class="response-container">
+            <div #response-loader class="loader"></div>
+            <div class="main">
+                <h2>Response</h2>
+                <div class="tab">
+                    <button class="tablinks active" onclick="openTab(event, 'Result')">Result</button>
+                    <button class="tablinks" onclick="openTab(event, 'Header')">Header</button>
+                    <button class="tablinks" onclick="openTab(event, 'Cookie')">Cookie</button>
+                </div>
+                <!-- Tab content -->
+                <textarea readonly id="Result" class="tabcontent active">
+
+                </textarea>
+
+                <div id="Header" class="tabcontent">
+
+                </div>
+
+                <div id="Cookie" class="tabcontent">
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="./prism.js"></script>
+    <script src="./tabs.js"></script>
+    <script type="module" src="./error.js"></script>
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
